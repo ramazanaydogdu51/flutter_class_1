@@ -202,7 +202,7 @@ class HomePadding extends StatelessWidget {
       ),
       body: Padding(
         padding: EdgeInsets.all(33),
-        child: Text('Test'),
+        child: Text('Testg2'),
 
       ),
 
