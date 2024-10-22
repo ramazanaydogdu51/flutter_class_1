@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: HomePadding(),
+      home: HomeRow(),
     ));
 
 class Home extends StatelessWidget {
@@ -117,12 +117,11 @@ class HomeButton extends StatelessWidget {
       ),
       body: Center(
           child: TextButton(
-           onPressed: () {
-             print('when you clicked me , I am happy');
-            },
-            child: Text('Clieck me Here'),
-      )
-      ),
+        onPressed: () {
+          print('when you clicked me , I am happy');
+        },
+        child: Text('Clieck me Here'),
+      )),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.cyan[100],
         onPressed: () {},
@@ -158,7 +157,6 @@ class HomeIcon extends StatelessWidget {
   }
 }
 
-
 class HomeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -168,18 +166,14 @@ class HomeContainer extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.cyanAccent[400],
       ),
-      body:Container(
+      body: Container(
         //padding: EdgeInsets.all(20.0),
         //padding: EdgeInsets.symmetric(horizontal: 10 , vertical: 99),
         padding: EdgeInsets.fromLTRB(99, 99, 99, 99),
         margin: EdgeInsets.all(9),
         color: Colors.amber,
         child: Text('Hello Container'),
-
-
       ),
-
-
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.cyan[100],
         onPressed: () {},
@@ -188,8 +182,6 @@ class HomeContainer extends StatelessWidget {
     );
   }
 }
-
-
 
 class HomePadding extends StatelessWidget {
   @override
@@ -203,9 +195,43 @@ class HomePadding extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(33),
         child: Text('Testg2'),
-
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.cyan[100],
+        onPressed: () {},
+        child: const Text('Click '),
+      ),
+    );
+  }
+}
 
+class HomeRow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Application Bar '),
+        centerTitle: true,
+        backgroundColor: Colors.cyanAccent[400],
+      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text("Text,selam"),
+          TextButton(
+            onPressed: () {},
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.cyan, foregroundColor: Colors.amber),
+            child: Text("Text Botton"),
+          ),
+          Container(
+            color: Colors.cyan,
+            padding: EdgeInsets.all(30),
+            child: Text("Inside Container"),
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.cyan[100],
         onPressed: () {},
