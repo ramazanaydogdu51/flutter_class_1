@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: HomeRow(),
+      home: HomeColumn(),
     ));
 
 class Home extends StatelessWidget {
@@ -240,3 +240,48 @@ class HomeRow extends StatelessWidget {
     );
   }
 }
+
+class HomeColumn extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Application Bar '),
+        centerTitle: true,
+        backgroundColor: Colors.cyanAccent[400],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Container(
+            padding : EdgeInsets.all(40),
+            color : Colors.amber,
+            child: Text('Text 1'),
+
+          ),
+          Container(
+            padding : EdgeInsets.all(50),
+            color : Colors.cyanAccent,
+            child: Text('Text 2'),
+
+          ),
+          Container(
+            padding : EdgeInsets.all(60),
+            color : Colors.amberAccent,
+            child: Text('Text 3'),
+
+          )
+
+        ],
+
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.cyan[100],
+        onPressed: () {},
+        child: const Text('Click '),
+      ),
+    );
+  }
+}
+
