@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-      home: HomeColumn(),
+      home: HomeExpandedWidgets(),
     ));
 
 class Home extends StatelessWidget {
@@ -255,26 +255,21 @@ class HomeColumn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            padding : EdgeInsets.all(40),
-            color : Colors.amber,
+            padding: EdgeInsets.all(40),
+            color: Colors.amber,
             child: Text('Text 1'),
-
           ),
           Container(
-            padding : EdgeInsets.all(50),
-            color : Colors.cyanAccent,
+            padding: EdgeInsets.all(50),
+            color: Colors.cyanAccent,
             child: Text('Text 2'),
-
           ),
           Container(
-            padding : EdgeInsets.all(60),
-            color : Colors.amberAccent,
+            padding: EdgeInsets.all(60),
+            color: Colors.amberAccent,
             child: Text('Text 3'),
-
           )
-
         ],
-
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.cyan[100],
@@ -285,3 +280,51 @@ class HomeColumn extends StatelessWidget {
   }
 }
 
+class HomeExpandedWidgets extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Application Bar '),
+        centerTitle: true,
+        backgroundColor: Colors.cyanAccent[400],
+      ),
+      body: Row(
+        children: [
+          Expanded(
+              flex: 1,
+              child: Image.asset('assets/test-3.jpg')),
+          Expanded(
+            flex: 1,
+            child: Container(
+              child: Text('Ramazan'),
+              color: Colors.cyanAccent,
+              padding: EdgeInsets.all(22),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              child: Text('aydogdu'),
+              color: Colors.yellow,
+              padding: EdgeInsets.all(22),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              child: Text('what is this??'),
+              color: Colors.cyanAccent,
+              padding: EdgeInsets.all(22),
+            ),
+          )
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.cyan[100],
+        onPressed: () {},
+        child: const Text('Click '),
+      ),
+    );
+  }
+}
